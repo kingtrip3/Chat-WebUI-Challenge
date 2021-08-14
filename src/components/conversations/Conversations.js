@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./Conversations.css";
 import ConversationsItems from "./ConversationsItems";
-import SettingsIcon from "@material-ui/icons/Settings";
-import ToggleOnIcon from "@material-ui/icons/ToggleOn";
-import MyProfile from "../myprofile/MyProfile.js";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
