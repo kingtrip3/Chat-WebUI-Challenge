@@ -3,6 +3,9 @@ import React, { Component, useState, createRef, useEffect } from "react";
 import "./Chat.css";
 import Avatar from "../conversations/Avatar";
 import ChatItem from "./ChatItems";
+import SendIcon from "@material-ui/icons/Send";
+import AttachFileIcon from "@material-ui/icons/AttachFile";
+import InsertEmoticonRoundedIcon from "@material-ui/icons/InsertEmoticonRounded";
 
 export default class Chat extends Component {
   messagesEndRef = createRef(null);
@@ -10,51 +13,65 @@ export default class Chat extends Component {
     {
       key: 1,
       image:
-        "https://pbs.twimg.com/profile_images/1116431270697766912/-NfnQHvh_400x400.jpg",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1565224488272-DUCP9VES10HV1V4TCONW/Best+professional+actor+headshots+Los+Angeles.jpg?format=750w",
       type: "",
-      msg: "Hi Tim, How are you?",
+      msg: "Hi Henry!!",
     },
     {
       key: 2,
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
-      type: "other",
-      msg: "I am fine.",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1565224488272-DUCP9VES10HV1V4TCONW/Best+professional+actor+headshots+Los+Angeles.jpg?format=750w",
+      type: "",
+      msg: "How can I help you today?",
     },
     {
       key: 3,
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w",
       type: "other",
-      msg: "What about you?",
+      msg: "Hey Bill, nice to meet you!",
     },
     {
       key: 4,
       image:
-        "https://pbs.twimg.com/profile_images/1116431270697766912/-NfnQHvh_400x400.jpg",
-      type: "",
-      msg: "Awesome these days.",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w",
+      type: "other",
+      msg: "Hope you're doing fine!",
     },
     {
       key: 5,
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
-      type: "other",
-      msg: "Finally. What's the plan?",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1565224488272-DUCP9VES10HV1V4TCONW/Best+professional+actor+headshots+Los+Angeles.jpg?format=750w",
+      type: "",
+      msg: "I am good thanks for asking",
     },
     {
       key: 6,
       image:
-        "https://pbs.twimg.com/profile_images/1116431270697766912/-NfnQHvh_400x400.jpg",
-      type: "",
-      msg: "what plan mate?",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w",
+      type: "other",
+      msg: "I am interested to know more about your prices and services you offer",
     },
     {
       key: 7,
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1565224488272-DUCP9VES10HV1V4TCONW/Best+professional+actor+headshots+Los+Angeles.jpg?format=750w",
+      type: "",
+      msg: "Sure, please check bollow to find more information: http://mazepixel.com/portfolio",
+    },
+    {
+      key: 8,
+      image:
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w",
       type: "other",
-      msg: "I'm taliking about the tutorial",
+      msg: "Awesome will get in touch if there's anything unclear. Thanks for now!",
+    },
+    {
+      key: 9,
+      image:
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w",
+      type: "other",
+      msg: "Have a great day!",
     },
   ];
 
@@ -101,9 +118,9 @@ export default class Chat extends Component {
             <div className="current-chatting-user">
               <Avatar
                 isOnline="active"
-                image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU"
+                image="https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w"
               />
-              <p>Tim Hover</p>
+              <p>Henry Boyd</p>
             </div>
           </div>
 
@@ -134,16 +151,17 @@ export default class Chat extends Component {
         <div className="content__footer">
           <div className="sendNewMessage">
             <button className="addFiles">
-              <i className="fa fa-plus"></i>
+              <AttachFileIcon className="attachButton" />
             </button>
             <input
               type="text"
-              placeholder="Type a message here"
+              placeholder="Enter your message here"
               onChange={this.onStateChange}
               value={this.state.msg}
             />
+            <InsertEmoticonRoundedIcon className="emoji"/>
             <button className="btnSendMsg" id="sendMsgBtn">
-              <i className="fa fa-paper-plane"></i>
+              <SendIcon className="sendbutton" /> <text>Send</text>
             </button>
           </div>
         </div>

@@ -1,87 +1,50 @@
 import React, { Component } from "react";
 import "./Conversations.css";
 import ConversationsItems from "./ConversationsItems";
+import SettingsIcon from "@material-ui/icons/Settings";
+import ToggleOnIcon from "@material-ui/icons/ToggleOn";
+import MyProfile from "../myprofile/MyProfile.js";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
 export default class Conversations extends Component {
   allChatUsers = [
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w",
       id: 1,
-      name: "Tim Hover",
-      active: true,
-      isOnline: true,
+      name: "Henry Boyd",
     },
     {
       image:
-        "https://pbs.twimg.com/profile_images/1055263632861343745/vIqzOHXj.jpg",
+        "https://srkheadshotday.com/wp-content/uploads/Lisa_Masten_Headshot_17B2797_Crop32-1024x683.jpg",
       id: 2,
-      name: "Ayub Rossi",
-      active: false,
-      isOnline: false,
+      name: "Martha Curtis",
+      message: "2",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQEZrATmgHOi5ls0YCCQBTkocia_atSw0X-Q&usqp=CAU",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1506638689213-Q2X3AOK0SHMP80PDO38E/Terrell+Carter+Headshot+Marc+Cartwright.jpg?format=750w",
       id: 3,
-      name: "Hamaad Dejesus",
-      active: false,
-      isOnline: false,
+      name: "Phillip Tucker",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZ6tM7Nj72bWjr_8IQ37Apr2lJup_pxX_uZA&usqp=CAU",
+        "https://pixelstudioproductions.com/wp-content/uploads/fly-images/5421/pixelstudioproductions.com-0496-1-749x749.jpg",
       id: 4,
-      name: "Eleni Hobbs",
-      active: false,
-      isOnline: true,
+      name: "Christine Reid",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJo1MiPQp3IIdp54vvRDXlhbqlhXW9v1v6kw&usqp=CAU",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263743711-CVCLCCJ1EJ0IE26UY5Y1/Headshots_Men47.jpg?format=750w",
       id: 5,
-      name: "Elsa Black",
-      active: false,
-      isOnline: false,
+      name: "Jerry Guzman",
     },
     {
       image:
-        "https://huber.ghostpool.com/wp-content/uploads/avatars/3/596dfc2058143-bpfull.png",
+        "https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263758214-3S0PVBHT2CSF7ZBSJLIH/Headshots_Men80.jpg?format=750w",
       id: 6,
-      name: "Kayley Mellor",
-      active: false,
-      isOnline: true,
-    },
-    {
-      image:
-        "https://www.paintingcontest.org/components/com_djclassifieds/assets/images/default_profile.png",
-      id: 7,
-      name: "Hasan Mcculloch",
-      active: false,
-      isOnline: true,
-    },
-    {
-      image:
-        "https://auraqatar.com/projects/Anakalabel/media//vesbrand/designer4.jpg",
-      id: 8,
-      name: "Autumn Mckee",
-      active: false,
-      isOnline: false,
-    },
-    {
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSM6p4C6imkewkCDW-9QrpV-MMAhOC7GnJcIQ&usqp=CAU",
-      id: 9,
-      name: "Allen Woodley",
-      active: false,
-      isOnline: true,
-    },
-    {
-      image: "https://pbs.twimg.com/profile_images/770394499/female.png",
-      id: 10,
-      name: "Manpreet David",
-      active: false,
-      isOnline: true,
+      name: "Russel Williams",
     },
   ];
   constructor(props) {
@@ -90,15 +53,18 @@ export default class Conversations extends Component {
       allChats: this.allChatUsers,
     };
   }
+
   render() {
     return (
       <div className="main__chatlist">
+        <div className="chatlist__items">
+          {/* <MyProfile className="profile__component"/> */}
+        </div>
         <div className="chatlist__heading">
-          <h2>Active Conversations</h2>
-          <i className="fa fa-ellipsis-h"></i>
-          <button className="btn-nobg">
-            <i className="fa fa-ellipsis-h"></i>
-          </button>
+          <h2 className="chatlist__title">
+            Active Conversations <text className="number">4</text>
+            <ExpandLessIcon className="center__button" />
+          </h2>
         </div>
         <div className="chatlist__items">
           {this.state.allChats.map((item, index) => {
@@ -106,9 +72,6 @@ export default class Conversations extends Component {
               <ConversationsItems
                 name={item.name}
                 key={item.id}
-                animationDelay={index + 1}
-                active={item.active ? "active" : ""}
-                isOnline={item.isOnline ? "active" : ""}
                 image={item.image}
               />
             );
@@ -116,11 +79,10 @@ export default class Conversations extends Component {
         </div>
 
         <div className="chatlist__heading">
-          <h2>Archived Conversations</h2>
-          <i className="fa fa-ellipsis-h"></i>
-          <button className="btn-nobg">
-            <i className="fa fa-ellipsis-h"></i>
-          </button>
+          <h2 className="chatlist__title">
+            Archived Conversations <text className="number">7</text>
+            <ExpandMoreIcon className="center__button" />{" "}
+          </h2>
         </div>
       </div>
     );

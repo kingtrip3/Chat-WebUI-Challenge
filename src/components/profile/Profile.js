@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./Profile.css";
+import ArchiveIcon from "@material-ui/icons/Archive";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 export default class Profile extends Component {
   toggleInfo = (e) => {
@@ -10,19 +13,22 @@ export default class Profile extends Component {
       <div className="main__userprofile">
         <div className="profile__card user__profile__image">
           <div className="profile__image">
-            <img src="https://pbs.twimg.com/profile_images/1116431270697766912/-NfnQHvh_400x400.jpg" />
+            <img src="https://images.squarespace-cdn.com/content/v1/57809f1fe6f2e12e1da3e283/1468263740583-ZHGK901W25YRE68D4WCU/Headshots_Men38.jpg?format=750w" />
           </div>
-          <h4>Fernando Faucho</h4>
-          <p>CEO & Founder at Highly Inc</p>
-        </div>
-        <div className="profile__card">
-          <div className="card__header" onClick={this.toggleInfo}>
-            <h4>Information</h4>
-            <i className="fa fa-angle-down"></i>
-          </div>
-          <div className="card__content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            ultrices urna a imperdiet egestas. Donec in magna quis ligula
+          <p className="info__text">
+            <MailOutlineIcon className="material__icons" /> henryboyd@gmail.com
+          </p>
+          <p className="info__text">
+            <AccountCircleIcon className="material__icons" />
+            Henry Boyd
+          </p>
+          <div className="archive">
+            <button className="archive__button">
+              <p className="archive__text">
+                Archive
+                <ArchiveIcon className="material__icons" />
+              </p>
+            </button>
           </div>
         </div>
       </div>

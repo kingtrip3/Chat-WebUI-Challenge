@@ -5,3 +5,20 @@
   padding: 15px 20px;
   display: flex;
 }
+
+.myprofile__box {
+  flex-flow: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversations__box {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+
+.chat__box {
+  display: flex;
+  flex-flow: row;
+}

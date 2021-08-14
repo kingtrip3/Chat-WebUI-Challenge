@@ -25,10 +25,7 @@
 .settings .btn-nobg {
   color: #000;
 }
-.content__body {
-  max-height: calc(100vh - calc(100vh / 2));
-  overflow: auto;
-}
+
 .chat__item {
   display: flex;
   justify-content: flex-end;
@@ -46,18 +43,11 @@
     0.19,
     0.37,
     1.11
-  ); /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-  animation-fill-mode: both; /* or: backwards, both, none */
-  animation-delay: 0.2s; /* or: Xms */
-}
-@keyframes showIn {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+  ); 
+  animation-fill-mode: both; 
+  animation-delay: 0.2s; or: Xms
+}   
+ 
 .chat__item .avatar {
   margin-right: 0px;
   margin-left: 20px;
@@ -65,7 +55,7 @@
   padding: 1px;
 }
 .chat__item__content {
-  background-color: #3a3b3c;
+  background-color: #111835;
   color: #fff;
   padding: 15px;
   border-radius: 10px 10px 10px 10px;
@@ -79,12 +69,10 @@
 }
 .chat__item__content .chat__meta span {
   font-size: 14px;
-  color: #8693d3;
+  color: #de7d72;
   user-select: none;
 }
-.chat__msg {
-  user-select: none;
-}
+
 
 .chat__item.other {
   flex-direction: row-reverse;
@@ -115,15 +103,15 @@
   border-radius: 8px;
 }
 .sendNewMessage button {
-  width: 36px;
+  width: 100px;
   height: 36px;
-  background-color: #ecefff;
+  background-color: #ffffff;
   border: none;
   box-shadow: none;
   outline: none;
   cursor: pointer;
   font-size: 16px;
-  color: #4665ff;
+  color: #a5a5a5;
   padding: 0;
   border-radius: 5px;
   line-height: 36px;
@@ -132,17 +120,30 @@
 .sendNewMessage button:hover {
   transform: scale(1.2);
 }
-.sendNewMessage button i {
+.sendbutton {
   display: block;
+  padding: 1 1 1 1;
+  vertical-align: middle;
 }
 .sendNewMessage input {
   flex-grow: 1;
   padding: 0 15px;
   background-color: transparent;
-  border: none;
+  border: solid 1px;
+  border-color: #dedede;
   outline: none;
 }
 #sendMsgBtn {
-  background-color: #3b5bfe;
+  background-color: #002aff;
   color: #fff;
+}
+
+.attachButton {
+  vertical-align: middle;
+}
+
+.emoji {
+  color: rgb(255, 204, 0);
+  vertical-align: middle;
+  padding: 5px 5px;
 }

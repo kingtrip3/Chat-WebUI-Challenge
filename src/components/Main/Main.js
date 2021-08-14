@@ -9,10 +9,10 @@ export default class Main extends Component {
   render() {
     return (
       <div className="main__chatbody">
-        <Conversations />
-        <MyProfile />
-        <Chat />
-        <Profile />
+        <MyProfile className="myprofile__box" />
+        <Conversations className="conversations__box" />
+        <Chat className="chat__box" />
+        <Profile className="profile__box" />
       </div>
     );
   }

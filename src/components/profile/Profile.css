@@ -40,13 +40,12 @@
   object-fit: cover;
   max-width: 100%;
 }
-.profile__card h4 {
-  margin-bottom: 0;
-}
-.profile__card p {
+
+.info__text {
   margin-top: 10px;
   font-size: 14px;
   color: #acb3b9;
+  text-align: left;
 }
 .profile__card .card__header {
   display: flex;
@@ -89,4 +88,33 @@
 }
 .profile__card.open .card__header i:before {
   content: "\f106";
+}
+
+.archive button:hover {
+  transform: scale(1.2);
+}
+
+.archive__button {
+  width: 150px;
+  height: 70px;
+  background-color: #fff;
+  border: solid 2px;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #4665ff;
+  padding: 0;
+  border-radius: 5px;
+  line-height: 36px;
+  transition: all 0.3s cubic-bezier(0.88, 0.19, 0.37, 1.11);
+}
+
+.archive__text {
+  color: #4665ff;
+  margin-bottom: 23px;
+}
+
+.material__icons {
+  vertical-align: middle;
 }
